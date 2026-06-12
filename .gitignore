@@ -1,0 +1,30 @@
+# Node dependencies
+node_modules/
+frontend/node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
+.vite/
+
+# MacOS
+.DS_Store
+
+# Editor directories
+.vscode/
+.idea/
+
+# Optional: lockfile
+package-lock.json
+yarn.lock
+.pnpm-debug.log

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(which node *)",
+      "Bash(ls /Users/uditsaxena/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin 2>&1 | head -5)",
+      "Bash(find / -maxdepth 6 -name \"npm\" -type f 2>/dev/null | head -5; find /Users/uditsaxena -maxdepth 8 -name \"npm-cli.js\" 2>/dev/null | head -3)",
+      "Bash(ls -la ~/.nvm 2>&1; ls -la /usr/local/n/versions/node 2>&1; cat ~/.zshrc 2>&1 | head -30)",
+      "Bash(mkdir -p /Users/uditsaxena/Documents/MySchoolERP/frontend/.claude)"
+    ]
+  }
+}
