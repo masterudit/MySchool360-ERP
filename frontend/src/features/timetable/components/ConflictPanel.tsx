@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { getClassLabel, SUBJECTS } from "../../staff/data/academics";
-import { MOCK_STAFF } from "../../staff/data/mockStaff";
 import { useTimetableStore } from "../store/useTimetableStore";
 import type { ConflictItem, TeacherDaySummary } from "../utils/conflictUtils";
 import { DAYS, MAX_PERIODS_PER_DAY } from "../utils/conflictUtils";
@@ -14,26 +12,6 @@ type Props = {
 function PeriodLabel({ period }: { period: number }) {
   const cfg = PERIOD_CONFIG.find((p) => p.period === period);
   return <>{cfg ? `P${period} (${cfg.start})` : `P${period}`}</>;
-}
-
-function LoadBar({ load, max = MAX_PERIODS_PER_DAY }: { load: number; max?: number }) {
-  const pct = Math.min((load / max) * 100, 100);
-  const color =
-    load > max ? "bg-error-500" :
-    load === max ? "bg-warning-500" :
-    load >= max - 1 ? "bg-warning-400" :
-    "bg-brand-500";
-
-  return (
-    <div className="flex items-center gap-2">
-      <div className="h-1.5 w-16 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700">
-        <div className={`h-full rounded-full ${color} transition-all`} style={{ width: `${pct}%` }} />
-      </div>
-      <span className={`text-[10px] font-semibold tabular-nums ${load > max ? "text-error-600" : load === max ? "text-warning-600" : "text-gray-500"} dark:text-opacity-80`}>
-        {load}/{max}
-      </span>
-    </div>
-  );
 }
 
 export function ConflictPanel({ conflicts, teacherSummaries }: Props) {
